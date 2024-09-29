@@ -98,3 +98,27 @@ export async function getFiles() {
     }
   }
 }
+
+export async function getFilesfromName(name?: string) {
+  try {
+    const url = name ? `http://127.0.0.1:8080/upload/${name}` : "http://127.0.0.1:8080/upload";
+    const res = await axios.get(url);
+    console.log(res);
+    
+    if(res.status === 200){
+      return {
+        body : res.data,
+        success : true 
+      }
+    } else {
+      return {
+        success : false, 
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    return {
+      success : false
+    }
+  }
+}

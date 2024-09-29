@@ -67,7 +67,6 @@ function FilesPage() {
                 <div>
                   <h2 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white mb-2 line-clamp-1">{file.name}</h2>
                   <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">{file.descr}</p>
-                  <p className="text-sm md:text-base text-blue-500 dark:text-blue-400 mb-4">{file.email}</p>
                 </div>
                 <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300">
                   <Link

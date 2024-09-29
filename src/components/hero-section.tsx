@@ -8,6 +8,11 @@ import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 
+interface EmailTemplateProps {
+    firstName: string;
+  }
+  
+
 export default function HeroSection() {
   return (
     <section

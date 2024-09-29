@@ -14,7 +14,7 @@ type SidebarProps = {
 const navItems: NavItem[] = [
   {
     title: 'Dashboard',
-    href: '/dashboard',
+    href: '/dashboard/locality',
     icon: 'dashboard',
     label: 'Dashboard'
   },

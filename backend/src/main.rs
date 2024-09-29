@@ -88,6 +88,25 @@ async fn upload_file(
     }
 }
 
+async fn get_files_by_name(
+    name: web::Path<String>,
+    upload_collection: Data<Collection<UploadFile>>,
+) -> impl Responder {
+    let filter = doc! { "name": name.into_inner() };
+    let mut cursor = upload_collection.find(filter, None).await.unwrap();
+    let mut uploads: Vec<UploadFile> = Vec::new();
+
+    while let Some(result) = cursor.try_next().await.unwrap() {
+        uploads.push(result);
+    }
+    
+    if uploads.is_empty() {
+        HttpResponse::NotFound().body("No files found with the given name")
+    } else {
+        HttpResponse::Ok().json(uploads)
+    }
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
@@ -117,6 +136,7 @@ async fn main() -> std::io::Result<()> {
             .route("/login", web::post().to(login))
             .route("/upload", web::get().to(get_files))
             .route("/upload", web::post().to(upload_file))
+            .route("/upload/{name}", web::get().to(get_files_by_name))
     })
     .bind("127.0.0.1:8080")?
     .run()

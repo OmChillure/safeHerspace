@@ -16,7 +16,7 @@ const SiteHeader = () => {
     <nav className="sticky top-0 h-[10vh] flex justify-center items-center z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex justify-between max-h-[10vh] items-center">
         <Link href="/">
-          <h1 className="text-lg mr-4 font-bold sm:inline-block">Repoto</h1>
+          <h1 className="text-lg mr-4 font-bold sm:inline-block">safeHERspace</h1>
         </Link>
         <div className="flex justify-center items-center">
           <div className="lg:flex md:hidden items-center gap-10">
@@ -25,7 +25,7 @@ const SiteHeader = () => {
         <div className="flex gap-1">
           <ModeToggle />
           {user ? (
-            <Link href="/dashboard">
+            <Link href="/dashboard/locality">
               <Button>Dashboard</Button>
             </Link>
           ) : (

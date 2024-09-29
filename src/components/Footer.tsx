@@ -1,52 +1,98 @@
-import React from 'react'
-import Link from 'next/link'
+"use client"
+import { useForm } from 'react-hook-form';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="text-black bg-white dark:bg-black body-font w-full">
-      <div className="container px-5 py-8 mx-auto flex flex-col sm:flex-row items-center justify-between">
-        <div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
-          <span className="text-xl font-medium dark:text-white text-black">Healthcare One-stop</span>
-          <p className="text-sm text-black mt-2 sm:mt-0 sm:ml-4 sm:pl-4 sm:border-l-2 dark:text-white sm:border-gray-300">
-            © 2024 —
-            <a href="http://healthcareonestop.co" className="text-gray-600 dark:text-white ml-1" target="_blank" rel="noopener noreferrer">
-              HealthcareOnestop.co
-            </a>
-          </p>
-        </div>
-        <div className="flex justify-center sm:justify-start mt-4 sm:mt-0">
-          <SocialIcon href="#" aria-label="Facebook">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </SocialIcon>
-          <SocialIcon href="#" aria-label="Twitter">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-          </SocialIcon>
-          <SocialIcon href="#" aria-label="Instagram">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-          </SocialIcon>
-          <SocialIcon href="#" aria-label="LinkedIn">
-            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2" stroke="none"></circle>
-          </SocialIcon>
-        </div>
-      </div>
-    </footer>
-  )
+export default function Footer() {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm();
+
+
+    const onSubmit = async (data: any) => {
+
+
+    };
+    return (
+        <footer className="border-t border-gray-900 dark:bg-black">
+            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                <div className="lg:grid lg:grid-cols-2">
+                    <div
+                        className="border-b border-gray-900 py-8 lg:order-last lg:border-b-0 lg:border-s lg:py-16 lg:ps-16"
+                    >
+                        <div className="mt-8 space-y-4 lg:mt-0">
+
+                            <div>
+                                <h3 className="text-2xl font-medium">This is a fake newsletter title</h3>
+                                <p className="mt-4 max-w-lg  ">
+                                    This is not a real newsletter email input. This is for you to build upon
+                                </p>
+                            </div>
+                            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full">
+                                <Input
+                                    {...register('email', { required: true })}
+                                    placeholder="Enter your email"
+                                    type="email"
+                                />
+                                <Button type="submit">
+                                    Sign Up
+                                </Button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div className="py-8 lg:py-16 lg:pe-16">
+
+
+                        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+
+                            <div>
+                                <p className="font-medium ">Socials</p>
+
+                                <ul className="mt-6 space-y-4 text-sm">
+                                    <li>
+                                        <a href="https://twitter.com/rasmickyy" target="_blank" className="transition hover:opacity-75"> Twitter </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/@rasmic" target="_blank" className="  transition hover:opacity-75"> YouTube </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p className="font-medium ">Helpful Links</p>
+
+                                <ul className="mt-6 space-y-4 text-sm">
+                                    <li>
+                                        <a target="_blank" href="/" rel="noopener noreferrer" className="  transition hover:opacity-75"> Docs </a>
+                                    </li>
+                                    <li>
+                                        <a href="/" className="  transition hover:opacity-75"> Methodology </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 border-t   pt-8">
+                            <ul className="flex flex-wrap gap-4 text-xs">
+                                <li>
+                                    <a href="/" target="_blank" className="transition hover:opacity-75">Terms & Conditions </a>
+                                </li>
+
+                                <li>
+                                    <a href="/" target="_blank" className="transition hover:opacity-75">Privacy Policy </a>
+                                </li>
+                            </ul>
+
+                            <p className="mt-8 text-xs  ">&copy; 2024. SomeCompany LLC. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    )
 }
-
-interface SocialIconProps {
-  href: string;
-  children: React.ReactNode;
-  'aria-label': string;
-}
-
-const SocialIcon: React.FC<SocialIconProps> = ({ href, children, 'aria-label': ariaLabel }) => (
-  <Link href={href} className="ml-3 text-gray-500 hover:text-gray-700 transition-colors" aria-label={ariaLabel}>
-    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-      {children}
-    </svg>
-  </Link>
-)
-
-export default Footer

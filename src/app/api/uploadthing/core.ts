@@ -7,7 +7,7 @@ const auth = (req: Request) => ({ id: "user1" }); // Fake auth function
  
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
-  pdfUploader: f({ pdf: { maxFileSize: "4MB" } })
+  pdfUploader: f({ image: { maxFileSize: "4MB" } })
    
     .onUploadComplete(async ({  file }) => {
     

@@ -23,9 +23,11 @@ const Login = () => {
     });
   };
 
+// shadow-[0_4px_50px_0px_rgba(0,0,0,0.25)] blur-[50] dark:shadow-[0_4px_50px_0px_rgba(173,216,230,0.25)]
+
   return (
-    <div className="flex p-5 items-center justify-center">
-      <div className="text-black dark:text-white p-8 rounded shadow-md w-full border-2 border-black dark:border-white  max-w-md shadow-[0_4px_50px_0px_rgba(0,0,0,0.25)] blur-[50] dark:shadow-[0_4px_50px_0px_rgba(173,216,230,0.25)]">
+    <div className="w-full h-[100vh] flex flex-col p-5 items-center justify-center">
+      <div className="text-black dark:text-white p-8 rounded-3xl shadow-md w-full border-[1px] transition-transform transform hover:scale-110 dark:hover:border-pink-500 border-gray-400 dark:border-white  max-w-md shadow-border-light dark:shadow-border-dark ">
         <h2 className="text-3xl text-center font-bold mb-5">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

@@ -34,6 +34,45 @@
 
       --radius: 0.5rem;
     }
+
+    .shadow-border-dark {
+      position: relative; /* Ensure positioning for pseudo-element */
+  }
+  
+  .shadow-border-dark::before {
+      content: '';
+      position: absolute;
+      top: -0px; /* Adjust as needed */
+      left: -0px; /* Adjust as needed */
+      right: -0px; /* Adjust as needed */
+      bottom: -0px; /* Adjust as needed */
+      background: transparent;
+      border-radius: inherit; /* Match the parent border radius */
+      box-shadow: 
+      0 0 25px rgba(120, 86, 91, 0.5), /* Light pink glow */
+      0 0 35px rgba(138, 57, 97, 0.5), /* Hot pink glow */
+      0 0 45px rgba(125, 9, 71, 0.5); /* Deep pink glow */
+      z-index: -1; /* Position behind the main content */
+  }  
+
+  .shadow-border-light {
+    position: relative; /* Ensure positioning for pseudo-element */
+}
+
+.shadow-border-light::before {
+    content: '';
+    position: absolute;
+    top: -0px; /* Adjust as needed */
+    left: -0px; /* Adjust as needed */
+    right: -0px; /* Adjust as needed */
+    bottom: -0px; /* Adjust as needed */
+    background: transparent;
+    border-radius: inherit; /* Match the parent border radius */
+    box-shadow: 
+    0 0 35px rgba(162, 162, 162, 0.5), /* Light pink glow */
+    0 0 45px rgba(211, 211, 211, 0.5); /* Hot pink glow */
+    z-index: -1; /* Position behind the main content */
+}  
     
     .dark {
       --background: 0 0% 3.9%;

@@ -38,8 +38,8 @@ const RegisterPage = () => {
   };
 
   return (
-  <div className="mt-4 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-  <div className="text-black dark:text-white p-6 sm:p-8 rounded shadow-md w-full border-2 border-black dark:border-white max-w-md sm:max-w-lg lg:max-w-xl shadow-[0_4px_50px_0px_rgba(0,0,0,0.25)]  dark:shadow-[0_4px_50px_0px_rgba(173,216,230,0.25)]">
+  <div className="flex h-[100vh] items-center justify-center p-4 sm:p-6 lg:px-8">
+  <div className="text-black dark:text-white p-6 sm:p-8 rounded-3xl w-full border-[1px] border-gray-400 transition-transform transform hover:scale-105 dark:hover:border-pink-500 dark:border-white max-w-md sm:max-w-lg lg:max-w-xl shadow-border-light dark:shadow-border-dark">
     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-center">
       Register
     </h1>
@@ -58,7 +58,7 @@ const RegisterPage = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:border-indigo-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-4">
@@ -74,7 +74,7 @@ const RegisterPage = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:border-indigo-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-4">
@@ -90,7 +90,7 @@ const RegisterPage = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:border-indigo-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-4">
@@ -106,7 +106,7 @@ const RegisterPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:border-indigo-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-6">
@@ -122,13 +122,13 @@ const RegisterPage = () => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:border-indigo-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="flex items-center justify-center">
         <button
           type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Register
         </button>

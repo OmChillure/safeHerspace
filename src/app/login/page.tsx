@@ -25,13 +25,13 @@ const Login = () => {
 
   return (
     <div className="flex p-5 items-center justify-center">
-      <div className="text-black dark:text-white p-8 rounded shadow-md w-full border-2 border-black dark:border-white  max-w-md ">
-        <h2 className="text-2xl font-bold mb-5">Login</h2>
+      <div className="text-black dark:text-white p-8 rounded shadow-md w-full border-2 border-black dark:border-white  max-w-md shadow-[0_4px_50px_0px_rgba(0,0,0,0.25)] blur-[50] dark:shadow-[0_4px_50px_0px_rgba(173,216,230,0.25)]">
+        <h2 className="text-3xl text-center font-bold mb-5">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block dark:text-white text-sm font-medium text-gray-700"
             >
               Email
             </label>
@@ -47,7 +47,7 @@ const Login = () => {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+              className="block dark:text-white text-sm font-medium text-gray-700"
             >
               Password
             </label>

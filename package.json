@@ -5,7 +5,7 @@
   "scripts": {
     "rust-dev": "cd backend && cargo run",
     "next-dev": "next dev",
-    "dev": "concurrently \"pnpm run next-dev\" \"cd backend && cargo run\"",
+    "dev": "concurrently \"npm run next-dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -23,6 +23,7 @@
     "@uploadthing/react": "^6.7.2",
     "axios": "^1.7.5",
     "class-variance-authority": "^0.7.0",
+    "concurrently": "^9.0.1",
     "lucide-react": "^0.435.0",
     "next": "14.2.6",
     "next-themes": "^0.3.0",

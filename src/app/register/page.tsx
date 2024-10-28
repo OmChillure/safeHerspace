@@ -38,87 +38,106 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="mt-[2%] flex items-center justify-center">
-      <div className="text-black dark:text-white p-8 rounded shadow-md w-full border-2 border-black dark:border-white max-w-md">
-        <h1 className="text-2xl font-bold mb-6 text-center">Register</h1>
-        {message && <p className="mb-4 text-center">{message}</p>}
-        <form onSubmit={handleRegister}>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-              Phone
-            </label>
-            <input
-              type="text"
-              id="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              Register
-            </button>
-          </div>
-        </form>
+  <div className="mt-4 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div className="text-black dark:text-white p-6 sm:p-8 rounded shadow-md w-full border-2 border-black dark:border-white max-w-md sm:max-w-lg lg:max-w-xl shadow-[0_4px_50px_0px_rgba(0,0,0,0.25)]  dark:shadow-[0_4px_50px_0px_rgba(173,216,230,0.25)]">
+    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-center">
+      Register
+    </h1>
+    {message && <p className="mb-4 text-center">{message}</p>}
+    <form onSubmit={handleRegister}>
+      <div className="mb-4">
+        <label
+          className="block dark:text-white text-gray-700 text-sm font-bold mb-2"
+          htmlFor="name"
+        >
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
       </div>
-    </div>
+      <div className="mb-4">
+        <label
+          className="block dark:text-white text-gray-700 text-sm font-bold mb-2"
+          htmlFor="username"
+        >
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block dark:text-white text-gray-700 text-sm font-bold mb-2"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block dark:text-white text-gray-700 text-sm font-bold mb-2"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-6">
+        <label
+          className="block dark:text-white text-gray-700 text-sm font-bold mb-2"
+          htmlFor="phone"
+        >
+          Phone
+        </label>
+        <input
+          type="text"
+          id="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div className="flex items-center justify-center">
+        <button
+          type="submit"
+          className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
   );
 };
 
